@@ -794,6 +794,7 @@ static uc_err uc_arm_context_restore(struct uc_struct *uc, uc_context *context)
     p += sizeof(env->sau.rnr) + sizeof(env->sau.ctrl);
 
 #undef ARM_ENV_RESTORE
+    arm_rebuild_hflags(env);
     return UC_ERR_OK;
 }
 
